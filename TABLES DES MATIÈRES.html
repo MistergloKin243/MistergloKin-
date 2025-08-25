@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MistergloKin - Table des Matières</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-color: #e0e0e0;
+  --text-color: #202124;
+  --primary-color: #1DB954; /* vert doux Xbox/Spotify */
+  --accent-color: #2ecc71;  /* vert clair accent */
+  --card-bg: #ffffff;
+  --highlight-bg: #d6f5e3;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --highlight-bg: #004422;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: black;
+  padding: 25px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.switch-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px 20px 0 0;
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.switch-label input { display: none; }
+
+.slider {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 34px;
+  margin-left: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider::before {
+  transform: translateX(25px);
+}
+
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+.highlight {
+  background-color: var(--highlight-bg);
+  padding: 18px;
+  border-radius: 15px;
+  font-weight: 500;
+  word-break: break-word;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.button-copy {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 18px;
+  background-color: var(--accent-color);
+  color: black;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.button-copy:hover {
+  background-color: #27ae60;
+}
+
+.footer {
+  text-align: center;
+  margin: 50px 10px 30px;
+  font-size: 0.95em;
+  color: #777;
+}
+</style>
+</head>
+<body>
+
+<div class="switch-container">
+    <label class="switch-label">Mode sombre
+        <input type="checkbox" id="darkSwitch">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<header>MistergloKin</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Accès au plan des matières</h2>
+    <p>Voici le lien pour découvrir notre formation :</p>
+    <div class="highlight" id="link">https://mega.nz/file/bm4nTRDZ</div>
+    <button class="button-copy" data-copy="https://mega.nz/file/Sq5HCISK">Copier le lien</button>
+  </div>
+
+  <div class="card">
+    <h2>Clé de chiffrement</h2>
+    <div class="highlight" id="key">tuSz12IT-MfKrLVLRHvYZMSKOifn2igdkOKA3WHltfA</div>
+    <button class="button-copy" data-copy="Y4XmZ7U80Yc_1v3ACZw5aoycVVPLI-qyKh6_9EdHivU">Copier la clé</button>
+  </div>
+
+  <div class="card">
+    <h2>Important</h2>
+    <p>⚠️<strong>Important</strong>: Sans la clé de chiffrement, il est impossible d’accéder au contenu. Cette clé protège le lien et garantit que seuls ceux qui la possèdent peuvent voir la table des matières.</br>
+
+<p>💡 <strong>Astuce</strong>: Copiez-collez simplement le lien puis la clé dans Mega pour accéder immédiatement au contenu.</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  Page réalisée par <strong>MistergloKin</strong></br>
+ | Message de MistergloKin: <em>"Restez curieux, chaque connaissance est un pas de plus vers l’excellence. |"</em><br>
+<em> La formation coûte 30 USD ou $, vous pouvez la suivre partout où vous voulez</br></em>
+</div>
+
+<script>
+document.getElementById('darkSwitch').addEventListener('change', function() {
+  document.body.classList.toggle('dark', this.checked);
+});
+
+document.querySelectorAll('.button-copy').forEach(btn => {
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = 'Copié !';
+    setTimeout(() => btn.textContent = 'Copier le lien', 1500);
+  });
+});
+</script>
+
+</body>
+</html>
