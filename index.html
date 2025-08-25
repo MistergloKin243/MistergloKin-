@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprendre la Compression Audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .example {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #bdc3c7;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-left: 4px solid #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comprendre la Compression Audio</h1>
+    <p>Ce guide explique le fonctionnement du <strong>ratio</strong> et du <strong>seuil (threshold)</strong> dans un compresseur audio.</p>
+
+    <h2>1. Le Seuil (Threshold)</h2>
+    <p>Le seuil définit le niveau à partir duquel le compresseur commence à agir. Tout signal en dessous du seuil n’est pas touché.</p>
+
+    <div class="example">
+        Exemple :<br>
+        - Seuil = -10 dB<br>
+        - Signal entrant = -12 dB → <strong>aucune compression</strong><br>
+        - Signal entrant = -5 dB → dépassement de 5 dB → compression appliquée
+    </div>
+
+    <h2>2. Le Ratio</h2>
+    <p>Le ratio indique combien le compresseur réduit le signal qui dépasse le seuil.</p>
+
+    <div class="example">
+        Formule :<br>
+        <em>Sortie au-dessus du seuil = Dépassement ÷ Ratio</em>
+    </div>
+
+    <h3>Exemples avec différents ratios :</h3>
+    <table>
+        <tr>
+            <th>Dépassement (dB)</th>
+            <th>Ratio 2:1</th>
+            <th>Ratio 5:1</th>
+            <th>Ratio 8:1</th>
+        </tr>
+        <tr>
+            <td>4 dB</td>
+            <td>2 dB passent</td>
+            <td>0,8 dB passent</td>
+            <td>0,5 dB passent</td>
+        </tr>
+        <tr>
+            <td>5 dB</td>
+            <td>2,5 dB passent</td>
+            <td>1 dB passe</td>
+            <td>0,625 dB passent</td>
+        </tr>
+        <tr>
+            <td>6 dB</td>
+            <td>3 dB passent</td>
+            <td>1,2 dB passent</td>
+            <td>0,75 dB passent</td>
+        </tr>
+        <tr>
+            <td>8 dB</td>
+            <td>4 dB passent</td>
+            <td>1,6 dB passent</td>
+            <td>1 dB passent</td>
+        </tr>
+    </table>
+
+    <h2>3. Interprétation des ratios</h2>
+    <ul>
+        <li><strong>1.5:1 → 2:1</strong> : compression légère, naturelle, presque transparente</li>
+        <li><strong>3:1 → 4:1</strong> : compression standard, équilibre entre contrôle et naturel</li>
+        <li><strong>5:1 → 8:1</strong> : compression forte, son compact et percutant, idéal pour batterie et voix rap agressive</li>
+        <li><strong>10:1 et plus</strong> : limiteur, empêche le signal de dépasser le seuil</li>
+    </ul>
+
+    <h2>4. Exemple pratique</h2>
+    <div class="example">
+        Ratio 2:1, seuil = -10 dB, signal dépasse de 5 dB → 2,5 dB passent<br>
+        Ratio 5:1, seuil = -10 dB, signal dépasse de 5 dB → 1 dB passe<br>
+        Ratio 8:1, seuil = -10 dB, signal dépasse de 6 dB → 0,75 dB passent
+    </div>
+
+    <div class="footer">
+        <p>Page réalisée par <strong>MistergloKin glokin</strong></p>
+        <p>Petit message de motivation de Gloire Yeye : <em>"Reste curieux et persévère dans l’apprentissage, chaque détail compte pour devenir meilleur dans ton art."</em></p>
+    </div>
+</body>
+</html>
