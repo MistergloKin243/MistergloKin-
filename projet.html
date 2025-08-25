@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - MistergloKin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5dc; /* beige clair */
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    nav a.active {
+      border-bottom: 3px solid #4CAF50;
+      padding-bottom: 4px;
+    }
+    .container {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 60px;
+    }
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      margin-bottom: 50px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+    }
+    .section img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .section p {
+      font-size: 1em;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+     .back-btn {
+      display: block;
+      margin: 40px auto;
+      padding: 12px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+}
+.back-btn:hover {
+  background-color: #45a049;
+}
+.galerie {
+  overflow: hidden;
+  width: 100%;
+  margin: 40px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.galerie-wrapper {
+  display: flex;
+  animation: defilement 30s linear infinite;
+}
+
+.galerie-wrapper img {
+  width: 200px; /* largeur de chaque image */
+  height: 130px; /* hauteur fixe pour toutes les images */
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+@keyframes defilement {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* ajustable selon nombre d’images */
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .galerie-wrapper img {
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+  }
+}
+    }
+    .back-btn:hover {
+      background-color: #45a049;
+    }
+    footer {
+      text-align: center;
+      padding: 50px;
+      background-color: #222;
+      color: white;
+      margin-top: 50px;
+    }
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      nav a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+      .container {
+        padding: 40px 15px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .section h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><strong>MistergloKin</strong></div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="formation.html">Formations</a>
+      <a href="projets.html" class="active">Projets</a>
+      <a href="services.html">Services</a>
+      <a href="achats.html">Achats</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Nos Projets</h1>
+
+    <div class="section">
+     <a href="projetm.html"><img src="PM.jpg" alt="Projets Musique"></a>
+      <h2>Projets Musique 🎶</h2>
+      <p>Découvrez nos créations musicales, nos collaborations et les artistes que nous accompagnons dans leur parcours.</p>
+    </div>
+
+    <div class="section">
+      <img src="PV.jpg" alt="Projets Vidéo">
+      <h2>Projets Vidéo 🎥</h2>
+      <p>Clips, interviews et productions visuelles qui donnent vie aux idées et aux émotions.</p>
+    </div>
+
+    <div class="section">
+      <img src="PP.jpg" alt="Projets Photo">
+      <h2>Projets Photo 📸</h2>
+      <p>Shooting artistique, événements et moments capturés par l’œil MistergloKin.</p>
+    </div>
+
+    <div class="section">
+      <h2>✨ Travaillons Ensemble</h2>
+      <p>Vous avez un projet ? Que ce soit en musique, en vidéo ou en photo, notre équipe est prête à collaborer avec vous.</p>
+    </div>
+<div class="galerie">
+  <div class="galerie-wrapper">
+    <img src="photo1.jpg" alt="Projet 1">
+    <img src="photo2.jpg" alt="Projet 2">
+    <img src="photo3.jpg" alt="Projet 3">
+    <img src="photo4.jpg" alt="Projet 4">
+    <img src="photo5.jpg" alt="Projet 5">
+    <img src="photo6.jpg" alt="Projet 6">
+    <img src="photo7.jpg" alt="Projet 7">
+    <img src="photo8.jpg" alt="Projet 8">
+    <!-- Tu peux ajouter autant d'images que tu veux -->
+  </div>
+</div>
+    <a href="index.html" class="back-btn">⬅ Retour à l'accueil</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MistergloKin. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

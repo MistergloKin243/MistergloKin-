@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations - MistergloKin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1e9; /* beige clair */
+      color: #222;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding-bottom: 3px;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid #4CAF50; /* mettre en évidence */
+    }
+
+    nav a:hover {
+      color: #4CAF50;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .formations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #4CAF50;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 40px auto;
+      padding: 12px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #388E3C;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #222;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MistergloKin</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Acceuil</a></li>
+        <li><a href="formation.html" class="active">Formations</a></li>
+        <li><a href="projet.html">Projets</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="achat.html">ACHATS</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Nos Formations</h2>
+
+    <div class="formations">
+      <div class="card">
+        <a href="pre.html"><img src="FP.jpg" alt="Formation en Présentiel"></a>
+        <h3>📍 Formation en Présentiel</h3>
+        <p>
+          Participez à des sessions physiques dans notre studio équipé. 
+          Vous bénéficiez d’un suivi direct, d’exercices pratiques 
+          et d’interactions réelles pour progresser rapidement.
+        </p>
+      </div>
+      <div class="card">
+        <a href="online.html"><img src="FV.jpg" alt="Formation en Vidéo"></a>
+        <h3>🎥 Formation en Vidéo</h3>
+        <p>
+          Suivez nos cours en ligne à votre rythme. 
+          Les vidéos sont claires, détaillées et accessibles partout, 
+          que vous soyez à la maison ou en déplacement.
+        </p>
+      </div>
+
+      <div class="card">
+        <a href="vide.html"><img src="FL.jpg" alt="Formation par Lecture PDF"></a>
+        <h3>📚 Formation par Lecture (PDF) + Assistance</h3>
+        <p>
+          Recevez des documents PDF complets et structurés. 
+          En complément, profitez d’une assistance personnalisée 
+          pour répondre à vos questions et lever vos blocages.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bouton retour -->
+    <a href="index.html" class="back-btn">Retour à l'Accueil</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MistergloKin - Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>

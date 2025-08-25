@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achats - MistergloKin</title>
+  <style>
+    /* ===== Base & Thème ===== */
+    :root{
+      --count: 8;                 /* nombre d’items sur la roue */
+      --radius: min(38vw, 420px); /* rayon de la roue (responsive) */
+      --card: 160px;              /* taille carte produit */
+      --spin: 40s;                /* durée d’un tour */
+      --accent: #4CAF50;          /* vert du thème */
+    }
+    @media (max-width: 768px){
+      :root{
+        --radius: 45vw;
+        --card: 120px;
+        --spin: 35s;
+      }
+    }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f5f5dc; /* beige clair */
+      color:#333;
+      line-height:1.6;
+    }
+    header{
+      background:#222;
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+    }
+    .logo{ font-weight:bold; }
+    nav a{
+      color:#fff; text-decoration:none; margin:0 20px; font-weight:bold;
+    }
+    nav a.active{ border-bottom:3px solid var(--accent); padding-bottom:4px; }
+    nav a:hover{ color:var(--accent); }
+
+    .container{
+      max-width:1100px; margin:auto; padding:60px 20px;
+    }
+    h1{
+      text-align:center; font-size:2.4em; margin-bottom:10px;
+    }
+    .subtitle{
+      text-align:center; color:#555; margin-bottom:40px;
+    }
+
+    /* ===== Roue circulaire ===== */
+    .stage{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height: calc(var(--radius)*2 + 120px);
+    }
+    .wheel{
+      position:relative;
+      width: calc(var(--radius)*2);
+      height: calc(var(--radius)*2);
+      border-radius:50%;
+      animation: spin var(--spin) linear infinite;  /* sens horaire par défaut */
+      will-change: transform;
+    }
+    .wheel:hover{ animation-play-state: paused; }
+    .item{
+      position:absolute;
+      top:50%; left:50%;
+      transform-origin: 0 0;
+      /* Placement sur le cercle : angle = index * (360/count) */
+      transform: rotate(calc(var(--i) * (360deg/var(--count))))
+                 translate(var(--radius))
+                 rotate(calc(-1 * var(--i) * (360deg/var(--count))));
+    }
+    .card{
+      width: var(--card);
+      height: var(--card);
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 8px 18px rgba(0,0,0,.12);
+      overflow:hidden;
+      text-align:center;
+      display:flex; flex-direction:column; justify-content:flex-end; align-items:center;
+      position:relative;
+      /* contre-rotation pour garder les cartes droites pendant la rotation de la roue */
+      animation: spin var(--spin) linear infinite reverse;
+    }
+    .wheel:hover .card{ animation-play-state: paused; }
+
+    .card img{
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover;
+      filter: saturate(1.05);
+    }
+    .badge{
+      position:absolute; top:8px; left:8px;
+      background:rgba(34,34,34,.85);
+      color:#fff; font-weight:bold; font-size:.9rem;
+      padding:6px 10px; border-radius:10px;
+    }
+    .price{
+      position:absolute; bottom:8px; right:8px;
+      background:var(--accent);
+      color:#fff; font-weight:bold; font-size:.95rem;
+      padding:6px 10px; border-radius:10px;
+      box-shadow:0 6px 12px rgba(76,175,80,.35);
+    }
+    .card a{
+      position:absolute; inset:0; display:block; text-indent:-9999px;
+    }
+
+    /* centre visuel */
+    .hub{
+      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      background:#fff; border:3px solid var(--accent);
+      width:140px; height:140px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:12px;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+    }
+    .hub strong{ color:#222; }
+    .hint{ font-size:.85rem; color:#666; }
+
+    /* CTA & Footer */
+    .back-btn{
+      display:block; width:220px; margin:40px auto 0;
+      padding:12px 24px; text-align:center;
+      background:var(--accent); color:#fff; border-radius:8px;
+      text-decoration:none; font-weight:bold; transition:.25s ease;
+    }
+    .back-btn:hover{ background:#388E3C; }
+    footer{
+      text-align:center; padding:50px; margin-top:50px;
+      background:#222; color:#fff;
+    }
+
+    /* Animations */
+    @keyframes spin{
+      to{ transform: rotate(360deg); } /* rotation horaire */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><strong>MistergloKin</strong></div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="formation.html">Formations</a>
+      <a href="projets.html">Projets</a>
+      <a href="services.html">Services</a>
+      <a href="achats.html" class="active">Achats</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Boutique MistergloKin</h1>
+    <p class="subtitle">Faites défiler la roue et appuyez pour réserver sur WhatsApp.</p>
+
+    <section class="stage">
+      <div class="wheel">
+        <!-- Astuce : change --count dans :root si tu ajoutes/supprimes des items -->
+        <!-- Chaque item reçoit un index --i (0,1,2,...) -->
+        <div class="item" style="--i:0">
+          <div class="card">
+            <img src="pr1.jpg" alt="Pack Beat Afro">
+            <span class="badge">Beat Afro</span>
+            <span class="price">$25</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20acheter%20le%20Beat%20Afro%20%C3%A0%2025$">Beat Afro</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:1">
+          <div class="card">
+            <img src="pr2.png" alt="Pack Vocal Presets">
+            <span class="badge">Vocal Presets</span>
+            <span class="price">$15</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20acheter%20les%20Vocal%20Presets%20%C3%A0%2015$">Vocal Presets</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:2">
+          <div class="card">
+            <img src="pr3.png" alt="Pack Drum Kit">
+            <span class="badge">Drum Kit</span>
+            <span class="price">$12</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20acheter%20le%20Drum%20Kit%20%C3%A0%2012$">Drum Kit</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:3">
+          <div class="card">
+            <img src="pr4.png" alt="Licence Mix+Master">
+            <span class="badge">Mix + Master</span>
+            <span class="price">$40</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20r%C3%A9server%20Mix%20%2B%20Master%20%C3%A0%2040$">Mix + Master</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:4">
+          <div class="card">
+            <img src="pr5.png" alt="Pack FX & Transitions">
+            <span class="badge">FX & Transitions</span>
+            <span class="price">$10</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20acheter%20FX%20%26%20Transitions%20%C3%A0%2010$">FX & Transitions</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:5">
+          <div class="card">
+            <img src="pr6.png" alt="Pack Piano MIDI">
+            <span class="badge">Piano MIDI</span>
+            <span class="price">$9</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20acheter%20le%20Pack%20Piano%20MIDI%20%C3%A0%209$">Piano MIDI</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:6">
+          <div class="card">
+            <img src="pr7.png" alt="Cover Art">
+            <span class="badge">Cover Art</span>
+            <span class="price">$8</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20r%C3%A9server%20une%20Cover%20Art%20%C3%A0%208$">Cover Art</a>
+          </div>
+        </div>
+
+        <div class="item" style="--i:7">
+          <div class="card">
+            <img src="pr8.png" alt="Mastering Express">
+            <span class="badge">Mastering Express</span>
+            <span class="price">$18</span>
+            <a href="https://wa.me/243832875538?text=Bonjour%20MistergloKin,%20je%20veux%20r%C3%A9server%20Mastering%20Express%20%C3%A0%2018$">Mastering Express</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centre de la roue -->
+      <div class="hub">
+        <div>
+          <strong>MistergloKin</strong><br/>
+          Boutique<br/>
+          <span class="hint">Appuyez sur un produit<br/>pour réserver</span>
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-btn">⬅ Retour à l'accueil</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MistergloKin. Tous droits réservés</p>
+  </footer>
+</body>
+</html>
